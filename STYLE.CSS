@@ -14,15 +14,18 @@ body {
 main {
     position: relative;
     text-align: center;
+    padding-bottom: 50px; /* Gives the bottom some breathing room */
 }
 
-main>div:nth-child(1) {
+/* 1. Logo Container */
+main>div:nth-of-type(1) {
     display: flex;
     justify-content: flex-start;
     padding: 20px 60px;
 }
 
-main>div:nth-child(2) {
+/* 2. Nav Links & Buttons */
+main>div:nth-of-type(2) {
     position: absolute;
     top: 25px;
     right: 60px;
@@ -30,7 +33,7 @@ main>div:nth-child(2) {
     align-items: center;
 }
 
-main>div:nth-child(2) a {
+main>div:nth-of-type(2) a {
     text-decoration: none;
     color: white;
     font-weight: 600;
@@ -38,7 +41,7 @@ main>div:nth-child(2) a {
     font-size: 1.1rem;
 }
 
-main>div:nth-child(2) button {
+main>div:nth-of-type(2) button {
     background: black;
     color: white;
     border: none;
@@ -49,13 +52,26 @@ main>div:nth-child(2) button {
     cursor: pointer;
 }
 
-h1 h2 {
+/* 3. Left Veggie Image */
+main>div:nth-of-type(3) {
+    position: absolute;
+    left: 0;
+    top: 120px;
+    z-index: -1;
+}
+
+/* 4. Main Heading */
+/* FIXED: Changed from 'h1 h2' to just 'h1'. Added margin to replace the deleted <pre> tags */
+h1 {
     font-size: 3.8rem;
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -1px;
+    margin-top: 80px; /* Pushes the text down */
+    margin-bottom: 30px;
 }
 
+/* Search and Location Inputs */
 #location,
 #search {
     background-color: white;
@@ -66,42 +82,40 @@ h1 h2 {
     border-radius: 10px;
     margin: 10px 5px;
     outline: none;
+    vertical-align: middle; /* Aligns them nicely side-by-side */
 }
 
 #location {
     width: 300px;
+    cursor: pointer;
 }
 
 #search {
     width: 500px;
 }
 
-main>div:nth-child(3) {
-    position: absolute;
-    left: 0;
-    top: 120px;
-    z-index: -1;
-}
-
-main>div:last-child {
-    position: absolute;
-    right: 0;
-    top: 120px;
-    z-index: -1;
-}
-
+/* 5. Promo Banners (Food, Instamart, Dineout) */
 main>div:nth-of-type(5) {
     display: flex;
     justify-content: center;
     gap: 25px;
-    margin-top: 30px;
+    margin-top: 60px; /* Pushes banners down from the search bar */
 }
 
 main>div:nth-of-type(5) img {
     border-radius: 15px;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 main>div:nth-of-type(5) img:hover {
     transform: scale(1.05);
+}
+
+/* 6. Right Sushi Image */
+main>div:last-child {
+    position: absolute;
+    right: 0;
+    top: 120px;
+    z-index: -1;
 }
